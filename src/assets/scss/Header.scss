@@ -1,0 +1,40 @@
+@use "./variables";
+
+.header {
+  width: 40vw;
+  padding: 2.4rem;
+  border: 3px solid variables.$color-secondary-outline;
+  border-radius: 2rem;
+  margin-bottom: 14rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.score {
+  padding: 0.8rem 4.8rem;
+  border-radius: 1.2rem;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    display: block;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: variables.$color-secondary-score;
+    text-transform: uppercase;
+    margin-bottom: -1rem;
+  }
+
+  &__value {
+    font-size: 5.6rem;
+    color: variables.$color-secondary-dark;
+    font-weight: variables.$font-weight--bold;
+  }
+}

@@ -1,0 +1,27 @@
+// Typography
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+$paragraph-default: 1.6rem;
+
+// Colors
+// Primary
+$color-primary-scissors: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+$color-primary-paper: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+$color-primary-rock: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+$color-primary-lizard: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+$color-primary-cyan: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+
+// Secondary
+$color-secondary-dark: hsl(229, 25%, 31%);
+$color-secondary-score: hsl(229, 64%, 46%);
+$color-secondary-outline: hsl(217, 16%, 45%);
+
+// Background
+$color-background: radial-gradient(
+  ellipse at center top,
+  hsl(214, 47%, 23%),
+  hsl(237, 49%, 15%)
+);
+
+// Font weights
+$font-weight--semibold: 600;
+$font-weight--bold: 700;

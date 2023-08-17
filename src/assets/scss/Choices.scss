@@ -1,0 +1,43 @@
+@use "./variables";
+
+.choices {
+  height: 35rem;
+  width: 35rem;
+
+  background-image: url(../images/bg-pentagon.svg);
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+  z-index: 0;
+}
+
+.choice {
+  position: absolute;
+  top: 7rem;
+  left: -4rem;
+  display: inline-block;
+}
+
+.choice__btn {
+  border: none;
+  padding: 3.2rem;
+  border-radius: 50%;
+  box-shadow: 1px -0.5rem 0 hsl(216, 17%, 70%);
+
+  background-color: #fff;
+}
+
+.choice::before {
+  content: "";
+  height: 16rem;
+  width: 16rem;
+  background-image: variables.$color-primary-paper;
+  box-shadow: 0 0.8rem 0 hsl(230, 64%, 49%);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}

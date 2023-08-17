@@ -1,0 +1,12 @@
+@use "./variables";
+
+html {
+  font-size: 62.5%; // 10/16 = 62.5% = 10px;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}

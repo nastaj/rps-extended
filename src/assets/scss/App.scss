@@ -1,0 +1,11 @@
+@use "variables";
+
+.app {
+  height: 100vh;
+  background-image: variables.$color-background;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
