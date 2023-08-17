@@ -1,0 +1,134 @@
+@use "./variables";
+
+.choice {
+  position: absolute;
+  display: inline-block;
+
+  &--rock {
+    top: 85%;
+    left: 65%;
+
+    &:hover {
+      &::before {
+        box-shadow: 0px 0px 50px 5px hsla(349, 64%, 41%, 0.8);
+      }
+    }
+  }
+
+  &--paper {
+    top: 25%;
+    left: 80%;
+
+    &:hover {
+      &::before {
+        box-shadow: 0px 0px 50px 5px hsla(230, 64%, 49%, 0.8);
+      }
+    }
+  }
+
+  &--scissors {
+    top: -5%;
+    left: 36%;
+
+    &:hover {
+      &::before {
+        box-shadow: 0px 0px 50px 5px hsla(39, 75%, 41%, 0.8);
+      }
+    }
+  }
+
+  &--lizard {
+    top: 85%;
+    left: 5%;
+
+    &:hover {
+      &::before {
+        box-shadow: 0px 0px 50px 5px hsla(261, 44%, 42%, 0.8);
+      }
+    }
+  }
+
+  &--spock {
+    top: 25%;
+    left: -5%;
+
+    &:hover {
+      &::before {
+        box-shadow: 0px 0px 50px 5px hsla(189, 51%, 36%, 0.8);
+      }
+    }
+  }
+
+  &--rock::before {
+    background-image: variables.$color-primary-rock;
+    box-shadow: 0 0.8rem 0 hsl(349, 64%, 41%);
+    transition: all 0.2s;
+  }
+
+  &--paper::before {
+    background-image: variables.$color-primary-paper;
+    box-shadow: 0 0.8rem 0 hsl(230, 64%, 49%);
+    transition: all 0.2s;
+  }
+
+  &--scissors::before {
+    background-image: variables.$color-primary-scissors;
+    box-shadow: 0 0.8rem 0 hsl(39, 75%, 41%);
+    transition: all 0.2s;
+  }
+
+  &--lizard::before {
+    background-image: variables.$color-primary-lizard;
+    box-shadow: 0 0.8rem 0 hsl(261, 44%, 42%);
+    transition: all 0.2s;
+  }
+
+  &--spock::before {
+    background-image: variables.$color-primary-cyan;
+    box-shadow: 0 0.8rem 0 hsl(189, 51%, 36%);
+    transition: all 0.2s;
+  }
+}
+
+.choice__btn {
+  border: none;
+  padding: 3.2rem;
+  border-radius: 50%;
+  box-shadow: 1px -0.5rem 0 hsl(216, 17%, 70%);
+  cursor: pointer;
+
+  background-color: #fff;
+
+  &:hover {
+    img {
+      animation: hoverOn 0.8s;
+    }
+  }
+}
+
+.choice::before {
+  content: "";
+  height: 16rem;
+  width: 16rem;
+
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+@keyframes hoverOn {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+
+  50% {
+    transform: scale(1.1) rotate(30deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}

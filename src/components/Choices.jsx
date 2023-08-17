@@ -1,13 +1,12 @@
 import "../assets/scss/Choices.scss";
+import Choice from "./Choice";
 
-function Choices() {
+function Choices({ choices }) {
   return (
     <div className="choices">
-      <div className="choice">
-        <button className="choice__btn">
-          <img src="src\assets\images\icon-paper.svg" alt="Paper" />
-        </button>
-      </div>
+      {choices.map((choice) => (
+        <Choice choice={choice} key={choice.type} />
+      ))}
     </div>
   );
 }

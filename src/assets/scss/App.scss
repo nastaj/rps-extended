@@ -3,9 +3,34 @@
 .app {
   height: 100vh;
   background-image: variables.$color-background;
+}
 
+.overlay {
+  background: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
+}
+
+.darkened {
+  filter: brightness(90%);
+  backdrop-filter: brightness(80%);
+  pointer-events: none;
+}
+
+.btn-rules {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  background: none;
+  color: #fff;
+  padding: 0.8rem 4.8rem;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 2px solid #fff;
+  border-radius: 1rem;
+  cursor: pointer;
 }
