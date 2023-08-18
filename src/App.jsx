@@ -35,7 +35,10 @@ const choices = [
 ];
 
 function App() {
-  const [step, setStep] = useState(3);
+  const [score, setScore] = useState(0);
+  const [playerChoice, setPlayerChoice] = useState({});
+  const [computerChoice, setComputerChoice] = useState({});
+  const [step, setStep] = useState("setup");
   const [isOpen, setIsOpen] = useState(false);
 
   function handleToggle() {
@@ -45,10 +48,33 @@ function App() {
   return (
     <main className="app">
       <div className={`overlay ${isOpen ? "darkened" : ""}`}>
-        <Header />
-        {step === 1 && <Choices choices={choices} />}
-        {step === 2 && <Picking />}
-        {step === 3 && <Result />}
+        <Header score={score} />
+        {step === "setup" && (
+          <Choices
+            choices={choices}
+            onPlayerChoice={setPlayerChoice}
+            onStep={setStep}
+          />
+        )}
+        {step === "picking" && (
+          <Picking
+            choices={choices}
+            playerChoice={playerChoice}
+            computerChoice={computerChoice}
+            onComputerChoice={setComputerChoice}
+            onStep={setStep}
+          />
+        )}
+        {step === "result" && (
+          <Result
+            playerChoice={playerChoice}
+            computerChoice={computerChoice}
+            onScore={setScore}
+            onPlayerChoice={setPlayerChoice}
+            onComputerChoice={setComputerChoice}
+            onStep={setStep}
+          />
+        )}
       </div>
       {isOpen && <Rules handleToggle={handleToggle} />}
       <button className="btn-rules" onClick={handleToggle}>
