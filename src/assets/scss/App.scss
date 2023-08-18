@@ -9,9 +9,9 @@
   background: transparent;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100%;
+  padding-top: 4.8rem;
 }
 
 .darkened {
@@ -33,4 +33,10 @@
   border: 2px solid #fff;
   border-radius: 1rem;
   cursor: pointer;
+
+  @media only screen and (max-width: variables.$bp-medium) {
+    right: 50%;
+
+    transform: translateX(50%);
+  }
 }

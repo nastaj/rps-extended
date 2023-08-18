@@ -25,3 +25,8 @@ $color-background: radial-gradient(
 // Font weights
 $font-weight--semibold: 600;
 $font-weight--bold: 700;
+
+// Media Queries Breakpoints
+$bp-largest: 81.25em; // 1300/16 = 81.25em
+$bp-large: 56.25em; // 900/16 = 56.25em
+$bp-medium: 35em; // 560/16 = 35em

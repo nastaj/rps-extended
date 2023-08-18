@@ -1,7 +1,7 @@
 @use "./variables";
 
 .header {
-  width: 40vw;
+  width: 40%;
   padding: 2.4rem;
   border: 3px solid variables.$color-secondary-outline;
   border-radius: 2rem;
@@ -9,6 +9,15 @@
 
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: variables.$bp-largest) {
+    width: 80%;
+  }
+
+  @media only screen and (max-width: variables.$bp-medium) {
+    width: 95%;
+    height: 18vh;
+  }
 }
 
 .score {

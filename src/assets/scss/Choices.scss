@@ -10,4 +10,14 @@
 
   position: relative;
   z-index: 0;
+
+  @media only screen and (max-width: variables.$bp-large) {
+    height: 50vw;
+    width: 50vw;
+  }
+
+  @media only screen and (max-width: variables.$bp-medium) {
+    height: 70vw;
+    width: 70vw;
+  }
 }
