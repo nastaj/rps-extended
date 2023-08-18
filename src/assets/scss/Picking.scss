@@ -1,0 +1,40 @@
+@use "./variables";
+
+.step-picking,
+.step-result {
+  display: flex;
+
+  &__player,
+  &__computer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6.4rem;
+    width: 25vw;
+  }
+
+  .choice {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    img {
+      height: 10rem;
+      width: 10rem;
+    }
+
+    &::before {
+      z-index: -1;
+      height: 22rem;
+      width: 22rem;
+    }
+  }
+}
+
+.heading-tertiary {
+  color: #fff;
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,26 @@
+@use "./variables";
+
+.step-result {
+  display: flex;
+  align-items: center;
+
+  &__btn {
+    background-color: #fff;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    width: 100%;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    color: variables.$color-secondary-score;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+}
+
+.heading-primary {
+  font-size: 6.4rem;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}

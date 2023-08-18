@@ -35,7 +35,7 @@ const choices = [
 ];
 
 function App() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(3);
   const [isOpen, setIsOpen] = useState(false);
 
   function handleToggle() {
