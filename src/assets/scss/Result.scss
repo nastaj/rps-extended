@@ -18,6 +18,15 @@
   }
 }
 
+.step-conclusion {
+  @media only screen and (max-width: variables.$bp-medium) {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .heading-primary {
   font-size: 6.4rem;
   color: #fff;

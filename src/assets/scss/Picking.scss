@@ -11,6 +11,16 @@
     align-items: center;
     gap: 6.4rem;
     width: 25vw;
+
+    @media only screen and (max-width: variables.$bp-large) {
+      width: 50vw;
+    }
+
+    @media only screen and (max-width: variables.$bp-medium) {
+      .heading-tertiary {
+        order: 1;
+      }
+    }
   }
 
   .choice {
@@ -19,15 +29,25 @@
     left: 0;
     z-index: 100;
 
-    img {
-      height: 10rem;
-      width: 10rem;
-    }
-
     &::before {
       z-index: -1;
       height: 22rem;
       width: 22rem;
+
+      @media only screen and (max-width: variables.$bp-medium) {
+        height: 18rem;
+        width: 18rem;
+      }
+    }
+
+    img {
+      height: 10rem;
+      width: 10rem;
+
+      @media only screen and (max-width: variables.$bp-medium) {
+        height: 6rem;
+        width: 6rem;
+      }
     }
   }
 }
@@ -37,4 +57,8 @@
   font-size: 2.8rem;
   letter-spacing: 2px;
   text-transform: uppercase;
+
+  @media only screen and (max-width: variables.$bp-medium) {
+    font-size: 2.4rem;
+  }
 }
