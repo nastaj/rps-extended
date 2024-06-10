@@ -2,14 +2,9 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "../assets/scss/Choice.scss";
 import "../assets/scss/Picking.scss";
+import { choices } from "../helpers/constants";
 
-function Picking({
-  choices,
-  playerChoice,
-  computerChoice,
-  onComputerChoice,
-  onStep,
-}) {
+function Picking({ playerChoice, computerChoice, onComputerChoice, onStep }) {
   const [isShown, setIsShown] = useState(false);
 
   useEffect(() => {

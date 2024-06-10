@@ -1,7 +1,8 @@
 import "../assets/scss/Choices.scss";
 import Choice from "./Choice";
+import { choices } from "../helpers/constants";
 
-function Choices({ choices, onPlayerChoice, onStep }) {
+function Choices({ onPlayerChoice, onStep }) {
   return (
     <div className="choices">
       {choices.map((choice, i) => (

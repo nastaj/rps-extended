@@ -1,38 +1,10 @@
+import { useState } from "react";
 import "./assets/scss/App.scss";
 import Header from "./components/Header";
 import Choices from "./components/Choices";
 import Rules from "./components/Rules";
 import Picking from "./components/Picking";
 import Result from "./components/Result";
-import { useState } from "react";
-
-const choices = [
-  {
-    type: "scissors",
-    image: "images/icon-scissors.svg",
-    counters: ["rock", "spock"],
-  },
-  {
-    type: "paper",
-    image: "images/icon-paper.svg",
-    counters: ["scissors", "lizard"],
-  },
-  {
-    type: "rock",
-    image: "images/icon-rock.svg",
-    counters: ["paper", "spock"],
-  },
-  {
-    type: "lizard",
-    image: "images/icon-lizard.svg",
-    counters: ["rock", "scissors"],
-  },
-  {
-    type: "spock",
-    image: "images/icon-spock.svg",
-    counters: ["paper", "lizard"],
-  },
-];
 
 function App() {
   const [score, setScore] = useState(() => {
@@ -53,15 +25,10 @@ function App() {
       <div className={`overlay ${isOpen ? "darkened" : ""}`}>
         <Header score={score} />
         {step === "setup" && (
-          <Choices
-            choices={choices}
-            onPlayerChoice={setPlayerChoice}
-            onStep={setStep}
-          />
+          <Choices onPlayerChoice={setPlayerChoice} onStep={setStep} />
         )}
         {step === "picking" && (
           <Picking
-            choices={choices}
             playerChoice={playerChoice}
             computerChoice={computerChoice}
             onComputerChoice={setComputerChoice}
