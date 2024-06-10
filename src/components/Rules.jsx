@@ -1,20 +1,25 @@
 import "../assets/scss/Rules.scss";
+import { animate, motion } from "framer-motion";
 
 function Rules({ handleToggle }) {
   return (
-    <div className="rules">
+    <motion.div
+      className="rules"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <div className="rules__header">
         <h2 className="heading-secondary">Rules</h2>
         <button className="rules__btn" onClick={handleToggle}>
-          <img src="/src/assets/images/icon-close.svg" alt="Close button" />
+          <img src="images/icon-close.svg" alt="Close button" />
         </button>
       </div>
       <img
         className="rules__img"
-        src="/src/assets/images/image-rules-bonus.svg"
+        src="images/image-rules-bonus.svg"
         alt="Rules"
       />
-    </div>
+    </motion.div>
   );
 }
 

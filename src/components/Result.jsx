@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../assets/scss/Result.scss";
+import { animate, motion } from "framer-motion";
 
 function Result({
   playerChoice,
@@ -21,10 +22,14 @@ function Result({
 
     onScore((score) => {
       if (isCountered && !isDrawn) {
-        return score > 0 ? score - 1 : score;
+        const newScore = score > 0 ? score - 1 : score;
+        localStorage.setItem("score", newScore);
+        return newScore;
       }
       if (!isCountered && !isDrawn) {
-        return score + 1;
+        const newScore = score + 1;
+        localStorage.setItem("score", newScore);
+        return newScore;
       }
       if (isDrawn) {
         return score;
@@ -42,14 +47,18 @@ function Result({
 
   return (
     <div className="step-result">
-      <div className="step-picking__player">
+      <motion.div
+        className="step-picking__player"
+        initial={{ x: 150 }}
+        animate={{ x: 0 }}
+      >
         <h3 className="heading-tertiary">You picked</h3>
         <div className={`choice choice--${playerChoice.type}`}>
           <button className={`choice__btn choice__btn--${playerChoice.type}`}>
             <img src={playerChoice.image} alt={playerChoice.type} />
           </button>
         </div>
-      </div>
+      </motion.div>
       <div className="step-conclusion">
         <h1 className="heading-primary">
           {playerIsWinner && !isDraw && "You win"}
@@ -60,14 +69,18 @@ function Result({
           Play Again
         </button>
       </div>
-      <div className="step-picking__computer">
+      <motion.div
+        className="step-picking__computer"
+        initial={{ x: -150 }}
+        animate={{ x: 0 }}
+      >
         <h3 className="heading-tertiary">The House picked</h3>
         <div className={`choice choice--${computerChoice.type}`}>
           <button className={`choice__btn choice__btn--${computerChoice.type}`}>
             <img src={computerChoice.image} alt={computerChoice.type} />
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

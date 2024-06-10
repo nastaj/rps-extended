@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import "../assets/scss/Choice.scss";
 import "../assets/scss/Picking.scss";
 
@@ -25,7 +26,11 @@ function Picking({
   }, []);
 
   return (
-    <div className="step-picking">
+    <motion.div
+      className="step-picking"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <div className="step-picking__player">
         <h3 className="heading-tertiary">You picked</h3>
         <div className={`choice choice--${playerChoice.type}`}>
@@ -42,17 +47,19 @@ function Picking({
           }`}
         >
           {isShown ? (
-            <button
+            <motion.button
               className={`choice__btn choice__btn--${computerChoice.type}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
             >
               <img src={computerChoice.image} alt={computerChoice.type} />
-            </button>
+            </motion.button>
           ) : (
             ""
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

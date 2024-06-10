@@ -1,8 +1,8 @@
 @use "./variables";
 
 .choices {
-  height: 23vw;
-  width: 23vw;
+  min-height: 23vw;
+  min-width: 23vw;
 
   background-image: url(../images/bg-pentagon.svg);
   background-size: cover;

@@ -8,34 +8,37 @@ import { useState } from "react";
 
 const choices = [
   {
-    type: "rock",
-    image: "src/assets/images/icon-rock.svg",
-    counters: ["paper", "spock"],
-  },
-  {
-    type: "paper",
-    image: "src/assets/images/icon-paper.svg",
-    counters: ["scissors", "lizard"],
-  },
-  {
     type: "scissors",
-    image: "src/assets/images/icon-scissors.svg",
+    image: "images/icon-scissors.svg",
     counters: ["rock", "spock"],
   },
   {
+    type: "paper",
+    image: "images/icon-paper.svg",
+    counters: ["scissors", "lizard"],
+  },
+  {
+    type: "rock",
+    image: "images/icon-rock.svg",
+    counters: ["paper", "spock"],
+  },
+  {
     type: "lizard",
-    image: "src/assets/images/icon-lizard.svg",
+    image: "images/icon-lizard.svg",
     counters: ["rock", "scissors"],
   },
   {
     type: "spock",
-    image: "src/assets/images/icon-spock.svg",
+    image: "images/icon-spock.svg",
     counters: ["paper", "lizard"],
   },
 ];
 
 function App() {
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(() => {
+    const savedScore = localStorage.getItem("score");
+    return savedScore ? Number(savedScore) : 0;
+  });
   const [playerChoice, setPlayerChoice] = useState({});
   const [computerChoice, setComputerChoice] = useState({});
   const [step, setStep] = useState("setup");
